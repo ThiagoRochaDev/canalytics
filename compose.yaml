@@ -1,0 +1,15 @@
+services:
+  canalytics:
+    build: .
+    ports:
+      - "127.0.0.1:8093:8093"
+    environment:
+      CANALYTICS_PUBLIC_URL: "${CANALYTICS_PUBLIC_URL:-http://localhost:8093}"
+      CANALYTICS_DATA_DIR: /data
+    volumes:
+      - canalytics-data:/data
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  canalytics-data:

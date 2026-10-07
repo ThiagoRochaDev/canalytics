@@ -1,0 +1,13 @@
+.git
+.scaffold
+.openai
+.sites-runtime
+.venv
+**/node_modules
+**/dist
+**/__pycache__
+**/.pytest_cache
+data
+output
+.env*
+docs

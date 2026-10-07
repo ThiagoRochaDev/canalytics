@@ -1,0 +1,35 @@
+name: Checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: pip install -r apps/api/requirements.lock
+      - run: python -m pytest -q
+      - run: npm --prefix apps/web ci
+      - run: node --experimental-strip-types --test apps/web/src/analytics.test.ts
+      - run: npm --prefix apps/web run build
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t canalytics:test .
+      - run: |
+          docker run -d --name canalytics -p 8093:8093 canalytics:test
+          for attempt in $(seq 1 20); do
+            if curl --fail http://127.0.0.1:8093/api/health; then exit 0; fi
+            sleep 2
+          done
+          docker logs canalytics
+          exit 1

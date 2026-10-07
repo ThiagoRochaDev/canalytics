@@ -1,0 +1,13 @@
+{
+  "name": "canalytics",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "scripts": {
+    "dev:web": "npm --prefix apps/web run dev",
+    "build": "npm --prefix apps/web run build",
+    "typecheck": "npm --prefix apps/web run typecheck",
+    "test": "python -m pytest apps/api/tests -q"
+  },
+  "description": "Open-source analytics for creators, streams and communities."
+}

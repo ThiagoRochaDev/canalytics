@@ -1,0 +1,17 @@
+.scaffold/
+.openai/
+.sites-runtime/
+node_modules/
+**/node_modules/
+**/dist/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+.env
+.env.*
+!.env.example
+*.log
+output/
+.ruff_cache/
