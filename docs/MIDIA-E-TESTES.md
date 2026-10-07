@@ -34,7 +34,7 @@ O pacote gerado está em output/media/index.html, com oito MP4 em output/media/v
 7. Celular: dashboard, menu, conectores e temas.
 8. Autenticação: logout, formulário e login da conta fictícia.
 
-Há seis artes PNG de 1080 × 1350, vídeo de 30 segundos e texto para LinkedIn em output/media/linkedin. Os dois PDFs ficam em output/pdf. O material está anexado à [release v0.1.0](https://github.com/ThiagoRochaDev/canalytics/releases/tag/v0.1.0). Nenhuma postagem foi enviada ao LinkedIn.
+Há seis artes PNG de 1080 × 1350, vídeo de 30 segundos e texto para LinkedIn em output/media/linkedin. O [texto revisado para LinkedIn](POST-LINKEDIN.md) inclui os links do repositório e das releases. Os dois PDFs ficam em output/pdf. O material está anexado à [release v0.1.0](https://github.com/ThiagoRochaDev/canalytics/releases/tag/v0.1.0). Nenhuma postagem foi enviada ao LinkedIn.
 
 output/ fica fora do versionamento para não incluir bancos, logs e arquivos privados de QA. Os screenshots sanitizados para documentação ficam em docs/images. O ZIP de divulgação inclui apenas mídia selecionada, CSV fictício, PDFs e a matriz de validação.
 
